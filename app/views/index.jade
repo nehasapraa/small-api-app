@@ -1,0 +1,30 @@
+doctype html
+html
+    head
+        title= title
+        block stylesheets
+            link(rel='stylesheet', href='/stylesheets/style.css')
+    body
+        hr
+        div(class="container")
+                h1 Simple API Request
+            div
+                pre
+                  | !{ JSON.stringify( response,null,2 ) }
+                table
+                    thead
+                        tr
+                            th Address
+                            th Type
+                            th Workflow
+
+                    tbody
+                        each res in response
+                            tr
+                                td #{res.concataddress}
+                                td #{res.type}
+                                td #{res.workflow}
+
+
+
+
