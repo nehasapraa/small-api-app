@@ -36,19 +36,16 @@ app.use(function (req, res, next) {
     next(err);
 });
 
-// error handlers
 
-
-let server = app.listen(8080, function () {
-
+let server = app.listen((process.env.PORT || '3000'), function () {
     let host = server.address().address;
-    let port = server.address().port;
-    console.log('Small API test app listening at http://%s:%s', host, port);
+    let port = process.env.PORT || '3000';
 
 
+    console.log('Small API test app listening  at http://%s:%s', host, port);
 });
 
-
+// error handlers
 app.use(function (err, req, res, next) {
     res.status(err.status || 500);
     res.render('error', {
