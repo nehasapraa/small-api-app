@@ -37,6 +37,9 @@ let response_json,input_vars ={};
             }
         });
 });
+ router.get('/', function(req, res) {
+     res.render('index', {title: 'Small API App'});
+});
 
 
 function filterData(data){

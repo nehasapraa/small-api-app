@@ -8,23 +8,29 @@ html
         hr
         div(class="container")
                 h1 Simple API Request
-            div
-                pre
-                  | !{ JSON.stringify( response,null,2 ) }
-                table
-                    thead
-                        tr
-                            th Address
-                            th Type
-                            th Workflow
-
-                    tbody
-                        each res in response
+            if response
+                div
+                    pre
+                      | !{ JSON.stringify( response,null,2 ) }
+                    table
+                        thead
                             tr
-                                td #{res.concataddress}
-                                td #{res.type}
-                                td #{res.workflow}
+                                th Address
+                                th Type
+                                th Workflow
+
+                        tbody
+                            each res in response
+                                tr
+                                    td #{res.concataddress}
+                                    td #{res.type}
+                                    td #{res.workflow}
 
 
-
+            else
+                h2
+                    | Please enter valid JSON in the URL to get the results.
+                    br
+                    | For eg: http://localhost:8080/htv/completed
+                    | or http://localhost:8080/htv/pending etc
 
