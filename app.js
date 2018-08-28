@@ -31,15 +31,15 @@ app.use(function (req, res, next) {
 
 // catch 404 if special character and forward to error handler
 app.use(function (req, res, next) {
-    let err = new Error('Not Found,Special Characters should not be included');
+    let err = new Error('Sorry, Page Not Found');
     err.status = 404;
     next(err);
 });
 
 
-let server = app.listen((process.env.PORT || '3000'), function () {
+let server = app.listen((process.env.PORT || '8080'), function () {
     let host = server.address().address;
-    let port = process.env.PORT || '3000';
+    let port = process.env.PORT || '8080';
 
 
     console.log('Small API test app listening  at http://%s:%s', host, port);
