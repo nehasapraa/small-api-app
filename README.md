@@ -49,8 +49,8 @@ response
 }
 ```
 
-## Special Characters
-e.g localhost:8080/%%%/completed
+## Special Characters and More than two params
+e.g localhost:8080/%%%/completed or localhost:8080/htv/completed/xyz
 
 ```cli
 RENDER ERROR PAGE
